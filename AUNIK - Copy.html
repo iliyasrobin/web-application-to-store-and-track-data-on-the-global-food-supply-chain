@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumer Dashboard</title>
+  <link rel="stylesheet" href="consumer.css">
+ 
+</head>
+<body>
+    <header>
+        <h1>Production Manager</h1>
+    </header>
+    <nav>
+        <a href="#">DashBoard</a>
+        <label for="gsearch">Search :</label>
+        <input type="search" id="gsearch" name="gsearch">
+    </nav>
+ 
+
+  <div class="dashboard-container">
+      <div class="sidebar">
+          <h2 style="color: rgb(20, 255, 94); text-align: center; ">Ammarul Islam</h2>
+          <h2>Menu </h2>
+          <h2>profile </h2>
+
+          <h2> Feedback</h2>
+          <h2> Help</h2>
+          <h2 style="color: red; text-align: center; ">Sing out </h2>
+
+      </div>
+
+    <div class="main-content">
+        <div class="section">
+            <button id="btn" type="button"><a href="/orderPage.html">Order</a>"</button>
+            <h2>Production Overview</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Production Status</th>
+                        <th>Production Schedule</th>
+                        <th>Quality</th>
+                    </tr>
+                </thead>
+                <tbody id="productionoverviewBody"><tr><td>Rice</td><td>In stock</td><td>2023-11-12</td><td>Avarage</td></tr><tr><td>Wheat</td><td>In stock</td><td>2023-11-30</td><td>GOOD</td></tr><tr><td>Potatoes</td><td>Out of stock</td><td>N/A</td><td>N/A</td></tr><tr><td>Carrots</td><td>In stock</td><td>2023-12-3</td><td>Well</td></tr></tbody>
+            </table>
+            </table>
+            </tbody>
+            </table>
+        </div>
+
+
+      <div class="section">
+          <h2>Production Planning</h2>
+        <table>
+          <thead>
+              <tr>
+                  <th>Product Name</th>
+                  <th>Batch Production</th>
+              </tr>
+          </thead>
+          <tbody id="Production PlanningBody"><tr><td>Rice</td><td>In 6 to 8 Month </td></tr><tr><td>Wheat</td><td>IN 5 months</td></tr><tr><td>Potatoes</td><td>in A week</td></tr><tr><td>Carrots</td><td>I A Week</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Dummy data for illustration
+      const incomingData  = [
+        { product name: 'Rice', product status: 'in stock', product AudioSchedule: '2023-11-12', quality: 'avarage' },
+        { product name: 'Wheat', product status: 'in stock', product AudioSchedule: '2023-11-30', quality: 'GOOD' },
+        { product name: 'Potatoes', product status: 'Out of stock', product AudioSchedule: 'N/A', quality: 'N/A' },
+        { product name: 'Carrots', product status: 'in stock', product AudioSchedule: '2023-12-3', quality: 'well' },
+    
+      // Add more data as needed
+    ];
+
+      const processedData = [
+          { Product Name: 'Rice', Batch Production: 'In 6 to 8 Month' },
+          { Product Name: 'Wheat', Batch Production: 'IN 5 months' },
+          { Product Name: 'Potatoes', Batch Production: '	in A week' },
+          { Product Name: 'Carrots', Batch Production: 'I A Week' },
+
+    // Add more data as needed
+    ];
+
+    function populateTable(tableBody, data) {
+      const body = document.getElementById(tableBody);
+      body.innerHTML = '';
+
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${item.oderID}</td><td>${item.product}</td><td>${item.quantity}</td><td>${item.amount}</td>`;
+        body.appendChild(row);
+      });
+      
+    }
+
+    populateTable('orderstatus', orderstatus);
+    populateTable('lastpurchase', lastpurchase);
+  </script>
+</body>
+</html>
